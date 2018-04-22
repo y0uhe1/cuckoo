@@ -1,0 +1,1 @@
+<a href="<%= auth_path(@conn, :request) %>" class="button is-link">Login with Twitter</a>

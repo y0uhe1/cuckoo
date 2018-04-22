@@ -1,0 +1,24 @@
+<%
+    info = get_flash(@conn, :info)
+    error = get_flash(@conn, :error)
+%>
+
+<%= if info do %>
+    <section class="section">
+        <div class="container">
+            <div class="notification is-success">
+                <%= info %>
+            </div>
+        </div>
+    </section>
+<% end %>
+
+<%= if error do %>
+    <section class="section">
+        <div class="container">
+            <div class="notification is-danger">
+                <%= error %>
+            </div>
+        </div>
+    </section>
+<% end %>

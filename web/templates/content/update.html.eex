@@ -1,0 +1,20 @@
+<div class="bd-is-1">
+    <h1 class="title is-2">Setting</h1>
+    <%= form_for @changeset, content_path(@conn, :update), fn f -> %>
+    <div class="field">
+        <label class="label">Twitch Login User</label>
+        <div class="control">
+            <%= text_input f, :user_login, class: "input"%>
+        </div>
+        <label class="label">Template (Start)</label>
+        <div class="control is-narrow">
+            <textarea class="textarea"></textarea>
+        </div>
+        <label class="label">Template (Hourly)</label>
+        <div class="control">
+            <%= textarea f, :template, class: "textarea"%>
+        </div>
+    </div>
+    <%= submit "Submit", class: "button is-link"%>
+    <% end %>
+</div>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cuckoo</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+    <nav class="navbar is-dark">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="<%= page_path(@conn, :index) %>">
+          Cuckoo
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="<%= page_path(@conn, :index) %>">
+            HOME
+          </a>
+        </div>
+        <div class="navbar-end">
+          <a class="navbar-item">
+            <img src="<%= @conn.assigns.current_user.profile_image_url %>">
+          </a>
+        </div>
+      </div>
+    </nav>
+    <section class="hero is-light">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title is-1">Cuckoo</h1>
+          <h2 class="subtitle is-4">Create your own Twitter bot for Twitch</h2>
+        </div>
+      </div> <!-- /container -->
+    </section>
+    <%= render "notification.html", conn: @conn %>
+    <main role="main">
+      <%= render @view_module, @view_template, assigns %>
+    </main>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>

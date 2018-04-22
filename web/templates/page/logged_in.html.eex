@@ -1,0 +1,40 @@
+<section class="section">
+    <div class="container">
+        <h1 class="title">Observe new Twitch Streamer</h1>
+        <%= link "Create", to: content_path(@conn, :new), class: "button is-link"%>
+    </div>
+</secion>
+<section class="section">
+    <h1 class="title">Observed Streamer List</h1>
+    <table class="table is-fullwidth">
+        <thead>
+            <tr>
+                <th></th>
+                <th>User</th>
+                <th>Template(start)</th>
+                <th>Template(hourly)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <%= for content <- @contents do %>
+                <tr>
+                    <td><img class="image is-48x48" src="<%= content.profile_image_url%>"/></td>
+                    <td><%= content.user_login %></td>
+                    <td><%= content.start_template %></td>
+                    <td><%= content.hourly_template %></td>
+                    <td>
+                        <%= link "Edit", 
+                            to: content_path(@conn, :edit, content),
+                            class: "button is-primary" %>
+                        <%= button "Delete",
+                            method: :delete,
+                            onclick: "return confirm(\"削除します。よろしいですか？\");",
+                            to: content_path(@conn, :delete, content), 
+                            class: "button is-danger" %>
+                    </td>
+                </tr>
+            <%= end%>
+        </tbody>
+    </table>
+</section>

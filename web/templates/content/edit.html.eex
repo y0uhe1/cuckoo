@@ -1,0 +1,28 @@
+<section class="section">
+    <div class="container">
+        <h2 class="title is-2">Setting</h2>
+        <%= form_for @changeset, content_path(@conn, :update, @content), fn f -> %>
+        <div class="field">
+            <label class="label">Twitch Login User</label>
+            <div class="control">
+                <%= text_input f, :user_login, class: "input"%>
+            </div>
+            <label class="label">Template (Start)</label>
+            <div class="control is-narrow">
+                <%= textarea f, :start_template, class: "textarea"%>
+            </div>
+            <label class="label">Template (Hourly)</label>
+            <div class="control">
+                <%= textarea f, :hourly_template, class: "textarea"%>
+            </div>
+            <label class="label">Activation</label>
+            <div class="control">
+                <label class="checkbox">
+                    <%= checkbox f, :activate, class: "checkbox"%> Activate
+                </label>
+            </div>
+        </div>
+        <%= submit "Submit", class: "button is-link"%>
+        <% end %>
+    </div>
+</section>

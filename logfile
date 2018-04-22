@@ -1,0 +1,26 @@
+LOG:  database system was shut down at 2017-10-21 21:00:20 JST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "cuckoo_dev" does not exist
+ERROR:  syntax error at or near "desc" at character 1
+STATEMENT:  desc states
+	;
+ERROR:  relation "states" does not exist at character 15
+STATEMENT:  select * from states;
+FATAL:  database "states" does not exist
+ERROR:  syntax error at or near "/" at character 1
+STATEMENT:  /l
+	;
+ERROR:  relation "states" does not exist at character 15
+STATEMENT:  select * from states
+	;
+ERROR:  syntax error at or near "/" at character 1
+STATEMENT:  /q
+	;
+ERROR:  syntax error at or near "exit" at character 1
+STATEMENT:  exit
+	;
+FATAL:  database "stop" does not exist
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
